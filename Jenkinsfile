@@ -31,6 +31,15 @@ stages {
                 }
             }
      }
+     stage('Upload artifacts into nexus') {
+            steps {
+                withCredentials([file(credentialsId: 'settings_file', variable: 'SETTINGS_FILE')]) {
+                    sh """
+                        mvn deploy --settings \$SETTINGS_FILE
+                    """
+                }
+            }
+        }
      
      stage("Cleanup Workspace"){
         steps {
