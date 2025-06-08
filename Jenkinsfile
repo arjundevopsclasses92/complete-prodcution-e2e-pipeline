@@ -26,8 +26,7 @@ stages {
                 script {
                     def scannerHome = tool 'sonar-scaner'
                     withSonarQubeEnv('sonar') {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=complete-prodcution-e2e-pipeline
- -Dsonar.language=java  -Dsonar.java.binaries=target/classes  -Dsonar.sourceEncoding=UTF-8"
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=complete-prodcution-e2e-pipeline -Dsonar.language=java  -Dsonar.java.binaries=target/classes  -Dsonar.sourceEncoding=UTF-8"
                     }
                 }
             }
