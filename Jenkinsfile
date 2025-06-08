@@ -3,6 +3,9 @@ pipeline {
  environment {
 	 test = "run"
  }
+ tools {
+	maven 'maven'
+ }
 stages {
      stage("Cleanup Workspace"){
         steps {
